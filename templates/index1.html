@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordle Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">                                <!-- Tells Browser to go to CSS for style -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />         <!-- Google Icons % Symbols -->
+    <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" /> 
+    <style>
+        body {
+            background-image: url("/static/images/paper.jpeg");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin:0;
+        }
+    </style>
+</head>
+
+<body >
+    <form action ="/" method="get">
+        <button type="submit" class="home">
+            <span class="material-symbols-outlined" style="color:rgb(64, 30, 9);">home</span>
+            <p style="color:rgb(64, 30, 9);">Home</p>
+        </button>
+    </form>
+    <p class="home" style="right: 2vh; left:auto; top: 1vh; color: rgb(64, 30, 9);">Start session: {{session}}</p>
+    <div>
+        <div class="mainArea">
+            <form method = 'post' class = "guessArea">
+                <p style="color:black; font-size: 200%;">Wordle</p>
+                    <div class="formContainer">
+                        <input
+                            class = "guessBox"
+                            type = "text"
+                            name = "guess"
+                            placeholder= "word"
+                            autofocus>
+                        <button 
+                            type = "submit"
+                            class = "enterBox"><span class="material-symbols-outlined" style="font-size: 140%;">check</span></button>
+                    </div>
+                <p style="text-align: left;color:black;font-size: 70%;font-family:'Courier New', Courier, monospace";>
+                    Enter a 5 letter word to play, A simple yet entertaining 
+                    game of Wordle using HTML, CSS, Python and the Flask module.
+                    Enjoy, enjoy, and enjoy.? = wrong place, ! = no letter in
+                    word.
+                </p>
+                <p style="text-align: left;color:black;font-size: 70%;font-family:'Courier New', Courier, monospace";>
+                    Status of last result: {{result}}<br>
+                    Attempts: {{attempts}}
+            </form>
+            <div class="infoContainer">
+                <!--<p class="infoBox">word: {{word}}</p>-->
+                <div style="display:flex;flex-direction: column; gap: 0;">
+                    {% for word in inputList %}
+                        <div style="display: flex; flex-direction: row; gap: 10px; padding: 1vh 2vh; margin: 0;">
+
+                            {% for tile in word %}
+
+                                {% if tile.status == "wrong" %}
+                                    <p class="letterBox" style="margin: 0;">{{ tile.letter }}</p>
+
+                                {% elif tile.status == "correct" %}
+                                    <p class="cletterBox" style="margin: 0;">{{ tile.letter }}</p>
+
+                                {% elif tile.status == "partial" %}
+                                    <p class="pletterBox" style="margin: 0;">{{ tile.letter }}</p>
+
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div style="display:flex; flex-direction: column; gap:0px; background-color: rgb(161, 161, 161); border-radius: 1vh;">
+            <div class="letterContainer">
+                {% for letter in "qwertyuiop" %}
+                    {% if letter in wrongInput %}
+                        <p class="letterBox">{{ letter }}</p>
+                    {% elif letter in correctInput %}
+                        <p class="cletterBox">{{ letter }}</p>
+                    {% elif letter in wrongPInput %}
+                        <p class="pletterBox">{{ letter }}</p>
+                    {% else %}
+                        <p class="dletterBox">{{ letter }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="letterContainer">
+                {% for letter in "asdfghjkl" %}
+                    {% if letter in wrongInput %}
+                        <p class="letterBox">{{ letter }}</p>
+                    {% elif letter in correctInput %}
+                        <p class="cletterBox">{{ letter }}</p>
+                    {% elif letter in wrongPInput %}
+                        <p class="pletterBox">{{ letter }}</p>
+                    {% else %}
+                        <p class="dletterBox">{{ letter }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="letterContainer">
+                {% for letter in "zxcvbnm" %}
+                    {% if letter in wrongInput %}
+                        <p class="letterBox">{{ letter }}</p>
+                    {% elif letter in correctInput %}
+                        <p class="cletterBox">{{ letter }}</p>
+                    {% elif letter in wrongPInput %}
+                        <p class="pletterBox">{{ letter }}</p>
+                    {% else %}
+                        <p class="dletterBox">{{ letter }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

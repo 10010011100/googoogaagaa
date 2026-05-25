@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordle Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">                                <!-- Tells Browser to go to CSS for style -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />         <!-- Google Icons % Symbols -->
+</head>
+
+<body>
+    <form action ="/" method="get">
+        <button type="submit" class="home">
+            <span class="material-symbols-outlined" style="color:rgb(243, 243, 243);">home</span>
+            <p style="color:rgb(242, 242, 242);">Home</p>
+        </button>
+    </form>
+    <p>you did it in {{attempts}} attempts!</p>
+    <div class="definitionBox">
+        <p style="font-size:80%; color: black;">{{user_input}}</p>
+        <hr>
+        <p style="color: black; font-family: 'Courier New', Courier, monospace;font-size:80%;">{{meaning}}</p>
+    </div>
+    <p style="color: rgb(245, 245, 245); font-family: 'Courier New', Courier, monospace;font-size:80%;">press Home to try again</p>
+</body>
+</html>

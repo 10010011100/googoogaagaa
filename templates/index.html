@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wordle Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">                                <!-- Tells Browser to go to CSS for style -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />         <!-- Google Icons % Symbols -->
+    <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" /> 
+    <style>
+        body {
+            background-image: url("/static/images/paper.jpeg");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin:0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action ="/" method="get">
+        <button type="submit" class="home">
+            <span class="material-symbols-outlined" style="color:rgb(64, 30, 9);">home</span>
+            <p style="color:rgb(64, 30, 9);">Home</p>
+        </button>
+    </form>
+    <p style="font-size: 150%; color: rgb(64, 30, 9);">Wordle
+    </p>
+    <form action="/{{uid}}" method="get">
+        <button type="submit" class="divBut">
+            <span class="material-symbols-outlined" style="font-size:400%;">play_arrow</span>
+            <p style="color:rgb(221, 182, 146);">Start Game</p>
+        </button>
+    </form>
+    </body>
+</html>

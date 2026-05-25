@@ -1,0 +1,139 @@
+body {
+    background-color: rgb(7, 7, 7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    min-height: 100vh;
+    margin: 0;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(236, 236, 236);
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.divBut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background-color: rgb(104, 53, 22);;
+    border-radius: 10px;
+    padding: 0 20px 0 20px;
+    color: rgb(221, 182, 146);
+    border: none;
+}
+
+.home {
+    position: fixed;
+    left: 1%;
+    top: 1%;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 60%;
+}
+
+.mainArea {
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    margin: 0 0 10vh 0;
+}
+
+.infoBox {
+    background-color: rgb(235, 235, 235);
+    padding: 1vh 8vh 1vh 2vh;
+    border-radius: 1vh;
+    font-size: 90%;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.guessArea {
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3vh;
+    border-radius: 1vh;
+    max-width: 30vh;
+}
+
+.enterBox {
+    background-color: rgb(39, 132, 213);
+    color: white;   
+    border-radius: 4px;
+    border: none;
+    padding: 0 2px;
+}
+
+.formContainer {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.definitionBox {
+    background-color: rgb(241, 241, 241);
+    border-radius: 1vh;
+    padding: 0 3vh;
+}
+
+.letterContainer {
+    display: flex;
+    gap: 1vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dletterBox {  
+    margin: 1vh 0;  
+    padding: 1vh 1vh;
+    border-radius: 2px;
+    background-color: rgb(230, 230, 230);
+    color: rgb(30, 30, 30);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.cletterBox {  
+    margin: 1vh 0;  
+    padding: 1vh 1vh;
+    border-radius: 2px;
+    background-color: rgb(200, 244, 209);
+    color: rgb(33, 137, 36);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.letterBox {  
+    margin: 1vh 0;  
+    padding: 1vh 1vh;
+    border-radius: 2px;
+    background-color: rgb(79, 79, 79);
+    color: rgb(151, 151, 151);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.pletterBox {  
+    margin: 1vh 0;  
+    padding: 1vh 1vh;
+    border-radius: 2px;
+    background-color: rgb(248, 240, 179);
+    color: rgb(155, 151, 31);
+    font-family:'Courier New', Courier, monospace;
+}
